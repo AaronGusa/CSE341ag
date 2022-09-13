@@ -1,0 +1,22 @@
+{
+  "name": "cse341ag",
+  "version": "1.0.0",
+  "description": "Project 1 for Aaron Gusa in CSE341",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AaronGusa/CSE341ag.git"
+  },
+  "author": "Aaron Gusa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AaronGusa/CSE341ag/issues"
+  },
+  "homepage": "https://github.com/AaronGusa/CSE341ag#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
