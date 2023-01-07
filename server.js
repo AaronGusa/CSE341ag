@@ -14,10 +14,13 @@ const port = process.env.PORT || 8080;
 //REPLACED ABOVE ROUTES
 app.use('/', require('./routes'))
 
+
 //LISTEN WILL WHAT IS OBSERVING FOR PORT INTERACTION
 app.listen(port, () => {
   console.log(`Running on port ${port}`)
 });
+
+
 
 //NOTES
 // SERVER.JS IS VERY LEAN
