@@ -5,10 +5,10 @@ routes.get('/', (req, res, next) => {
 });
 
 routes.get('/test', (req, res, next) => {
-  res.send('Hello there');
+  res.send("You don't need to stay here, it's only a test.");
 });
 
-
+routes.use('/contacts', require('./contacts'))
 
 
 

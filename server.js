@@ -7,7 +7,7 @@ const app = express();
 const bodyParse = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./back/db/dbConnect');
-const contRoute = require('./back/routes/contacts');
+const routesHub = require('./back/routes/index');
 const port = process.env.PORT || 8080;
 
 //WHEN ACCESSED GET WILL BE DISPLAYED -- ROUTES
@@ -23,7 +23,7 @@ app
     res.setHeader('Access-Control-Allow-Origin', "*");
     next();
   })
-  .use('/', contRoute);
+  .use('/', routesHub);
 
 //LISTEN WILL WHAT IS OBSERVING FOR PORT INTERACTION
 

@@ -1,2 +1,10 @@
-GET http://localhost:8080 
-# Contact JSON with contact information from MongoDB
+//LOCALHOST
+#---------------------------------------------------#
+###
+GET http://localhost:8080/contacts 
+# Contact JSON with contact information from MongoDB #
+###
+#---------------------------------------------------#
+#not functional yet
+GET http://localhost:8080/contacts/63bc9ba020a116e9df68b1ea
+
