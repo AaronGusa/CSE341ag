@@ -4,6 +4,10 @@
 //EXPRESS MAKES IT EASY TO HANDLE LOTS OF ROUTES IN OUR APPLICATION
 const express = require('express');
 const app = express();
+const bodyParse = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
+const mongodb = require('./back/db/dbConnect');
+const contRoute = require('./back/routes/contacts');
 const port = process.env.PORT || 8080;
 
 //WHEN ACCESSED GET WILL BE DISPLAYED -- ROUTES
@@ -12,15 +16,25 @@ const port = process.env.PORT || 8080;
     //   res.send('Hello Friend!')
     // });
 //REPLACED ABOVE ROUTES
-app.use('/', require('./routes'))
 
+app
+  .use(bodyParse.json())
+  .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', "*");
+    next();
+  })
+  .use('/', contRoute);
 
 //LISTEN WILL WHAT IS OBSERVING FOR PORT INTERACTION
-app.listen(port, () => {
-  console.log(`Running on port ${port}`)
-});
 
-
+mongodb.initDb( (err, mongodb) => {
+  if (err) {
+    console.log(err);
+  } else {  
+    app.listen(port, () => {
+      console.log(`Running on port ${port}`)
+  })
+}});
 
 //NOTES
 // SERVER.JS IS VERY LEAN
