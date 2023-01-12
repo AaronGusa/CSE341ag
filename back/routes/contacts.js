@@ -7,6 +7,8 @@ const contController = require('../controllers/contacts');
 
 router.get('/', contController.getDb);
 
+router.get('/:id', contController.getOne);
+
 // exports
 
 module.exports = router;
