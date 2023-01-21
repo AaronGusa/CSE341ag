@@ -1,6 +1,8 @@
 const mongodb = require('../db/dbConnect');
 const ObjectId = require('mongodb').ObjectId;
 
+
+
 const getDb = async (req, res, next) => {
     const result = await mongodb.getDb().db('341_contacts').collection('contacts').find();
     result.toArray().then((contacts) => {
@@ -20,4 +22,62 @@ const getOne = async (req, res, next) => {
     });
 }
 
-module.exports = { getDb, getOne };
+const postContact = async (req, res, next) => {
+    const contactModel = {
+        fname: "Post",
+        lname: "TEST",
+        email: "test@test.test",
+        favoriteColor: "Test",
+        birthday: "01/20/2023"
+    };
+    const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactModel)
+    .then((result)=> {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+    })
+}
+
+const putContact = async (req, res, next) => {
+    const id = new ObjectId(req.params.id);
+    const contactUpdated = {
+        fname: "Post",
+        lname: "UPDATED",
+        email: "updated@update.updated",
+        favoriteColor: "Updated",
+        birthday: "01/21/2023"
+    };
+    const result = await mongodb.getDb().db('341_contacts').collection('contacts').replaceOne({_id: id }, contactUpdated)
+    .then((result) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+    });
+}
+
+const deleteContact = async (req, res, next) => {
+    const id = new ObjectId(req.params.id);
+    const result = await mongodb.getDb().db('341_contacts').collection('contacts').deleteOne({_id: id})
+    .then((result) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+    });
+}
+
+
+module.exports = { getDb, getOne, postContact, putContact, deleteContact };
+
+// {
+//     "fname":"Post", 
+//     "lname":"TEST", 
+//     "email":"test@test.test", 
+//     "favoriteColor":"Test", 
+//     "birthday":"01/20/2023"
+//     }
+
+// {
+//     "fname":"Post", 
+//     "lname":"UPDATED", 
+//     "email":"testUPDATE@gmail.com", 
+//     "favoriteColor":"Teal", 
+//     "birthday":"01/21/2023"
+//     } 
+    

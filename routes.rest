@@ -3,7 +3,7 @@
 GET http://localhost:8080/contacts 
 # Contact JSON with contact information from MongoDB #
 ###
-#---------------------------------------------------#
+#------------------------ GET :ids ---------------------------#
 GET http://localhost:8080/contacts/63bc9ba020a116e9df68b1ea
 
 ###
@@ -20,3 +20,15 @@ GET http://localhost:8080/contacts/63bc9cd720a116e9df68b1ee
 
 ###
 GET http://localhost:8080/contacts/63bc9d1720a116e9df68b1ef
+
+###
+#------------------------ POST ---------------------------#
+POST http://localhost:8080/contacts HTTP/1.1 
+
+###
+#------------------------ PUT :ids -----------------------------#
+PUT http://localhost:8080/contacts/63cc5c365b1903940a8046b6 HTTP/1.1 
+
+###
+#------------------------ DELETE :ids --------------------------#
+DELETE http://localhost:8080/contacts/63cc5c365b1903940a8046b6 HTTP/1.1 
