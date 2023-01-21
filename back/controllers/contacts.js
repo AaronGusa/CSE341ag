@@ -23,14 +23,14 @@ const getOne = async (req, res, next) => {
 }
 
 const postContact = async (req, res, next) => {
-    const contactModel = {
+    const contactNew = {
         fname: "Post",
         lname: "TEST",
         email: "test@test.test",
         favoriteColor: "Test",
         birthday: "01/20/2023"
     };
-    const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactModel)
+    const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactNew)
     .then((result)=> {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(result);
@@ -64,20 +64,3 @@ const deleteContact = async (req, res, next) => {
 
 
 module.exports = { getDb, getOne, postContact, putContact, deleteContact };
-
-// {
-//     "fname":"Post", 
-//     "lname":"TEST", 
-//     "email":"test@test.test", 
-//     "favoriteColor":"Test", 
-//     "birthday":"01/20/2023"
-//     }
-
-// {
-//     "fname":"Post", 
-//     "lname":"UPDATED", 
-//     "email":"testUPDATE@gmail.com", 
-//     "favoriteColor":"Teal", 
-//     "birthday":"01/21/2023"
-//     } 
-    
