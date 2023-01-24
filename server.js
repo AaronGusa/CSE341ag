@@ -21,6 +21,9 @@ const swagDoc = require('./swagger.json')
 
 app
   .use('/routes', swaggerUi.serve, swaggerUi.setup(swagDoc))
+  .use(bodyParse.urlencoded({
+    extended: true
+  }))
   .use(bodyParse.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', "*");

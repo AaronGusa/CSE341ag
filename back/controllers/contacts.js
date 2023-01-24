@@ -23,6 +23,7 @@ const getOne = async (req, res, next) => {
 }
 
 const postContact = async (req, res, next) => {
+    
     const contactNew = {
         fname: req.body.fname,
         lname: req.body.lname,
@@ -30,11 +31,15 @@ const postContact = async (req, res, next) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
-    const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactNew)
-    .then((result)=> {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(result);
-    })
+    console.log(req.body);
+    const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactNew);
+    // .then((result)=> {
+    //     res.setHeader('Content-Type', 'application/json');
+    //     res.status(200).json(result);
+    // })
+    if (result.acknowledged) {
+        res.status(201).json(result);
+    }
 }
 
 const putContact = async (req, res, next) => {
