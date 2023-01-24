@@ -24,11 +24,11 @@ const getOne = async (req, res, next) => {
 
 const postContact = async (req, res, next) => {
     const contactNew = {
-        fname: "Post",
-        lname: "TEST",
-        email: "test@test.test",
-        favoriteColor: "Test",
-        birthday: "01/20/2023"
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
     const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactNew)
     .then((result)=> {
@@ -40,11 +40,11 @@ const postContact = async (req, res, next) => {
 const putContact = async (req, res, next) => {
     const id = new ObjectId(req.params.id);
     const contactUpdated = {
-        fname: "Post",
-        lname: "UPDATED",
-        email: "updated@update.updated",
-        favoriteColor: "Updated",
-        birthday: "01/21/2023"
+        fname: req.body.fname,
+        lname: req.body.lname,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
     };
     const result = await mongodb.getDb().db('341_contacts').collection('contacts').replaceOne({_id: id }, contactUpdated)
     .then((result) => {
