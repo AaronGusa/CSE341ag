@@ -23,12 +23,20 @@ GET http://localhost:8080/contacts/63bc9d1720a116e9df68b1ef
 
 ###
 #------------------------ POST ---------------------------#
-POST http://localhost:8080/contacts HTTP/1.1 
+POST http://localhost:8080/contacts HTTP/1.1 content-type:application/json
+
+{
+    "fname":"Test","lname":"POST","email":"post@post.post","favoriteColor":"post purple","birthday":"post 2000"
+}
 
 ###
 #------------------------ PUT :ids -----------------------------#
-PUT http://localhost:8080/contacts/63cc64097854aba3ea9aac8d HTTP/1.1 
+PUT http://localhost:8080/contacts/63d04d3b99b8fbcaf1957159 HTTP/1.1 content-type:application/json
+{
+    "fname":"Test","lname":"Update","email":"update@update.update","favoriteColor":"update brown","birthday":"05/05/2005"
+}
+
 
 ###
 #------------------------ DELETE :ids --------------------------#
-DELETE http://localhost:8080/contacts/63cc64097854aba3ea9aac8d HTTP/1.1 
+DELETE http://localhost:8080/contacts/63d04d3b99b8fbcaf1957159 HTTP/1.1 
