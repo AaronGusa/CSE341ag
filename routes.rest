@@ -41,7 +41,10 @@ content-type: application/json
 
 {
     "fname":"Test",
-    "lname":"Update","email":"update@update.update","favoriteColor":"update brown","birthday":"05/05/2005"
+    "lname":"Update",
+    "email":"update@update.update",
+    "favoriteColor":"update brown",
+    "birthday":"05/05/2005"
 }
 
 

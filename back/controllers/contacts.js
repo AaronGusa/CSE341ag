@@ -31,7 +31,7 @@ const postContact = async (req, res, next) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
     };
-    console.log(req.body);
+    // console.log(req.body);
     const result = await mongodb.getDb().db('341_contacts').collection('contacts').insertOne(contactNew);
     // .then((result)=> {
     //     res.setHeader('Content-Type', 'application/json');
