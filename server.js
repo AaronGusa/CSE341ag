@@ -9,6 +9,8 @@ const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./back/db/dbConnect');
 const routesHub = require('./back/routes/index');
 const port = process.env.PORT || 8080;
+const swaggerUi = require('swagger-ui-express');
+const swagDoc = require('./swagger.json')
 
 //WHEN ACCESSED GET WILL BE DISPLAYED -- ROUTES
 //MOVED TO ROUTES FOLDER
@@ -18,6 +20,7 @@ const port = process.env.PORT || 8080;
 //REPLACED ABOVE ROUTES
 
 app
+  .use('/routes', swaggerUi.serve, swaggerUi.setup(swagDoc))
   .use(bodyParse.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', "*");
