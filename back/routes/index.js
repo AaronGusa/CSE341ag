@@ -17,8 +17,8 @@ routes.use('/',
   (docData = (req, res) => {
     
   let docData = {
-    APIs: 'http://localhost:8080/api',
-    Contact_JSON: 'http://localhost:8080/contacts'
+    APIs: 'https://ag341.onrender.com/api/',
+    Contact_JSON: 'https://ag341.onrender.com/contacts'
   };
   res.send(docData);
 })
