@@ -39,7 +39,11 @@ const postContact = async (req, res, next) => {
     // })
     if (result.acknowledged) {
         res.status(201).json(result);
-        this.getDb;
+        await mongodb.getDb().db('341_contacts').collection('contacts').find();
+    result.toArray().then((contacts) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(contacts); 
+    });
     }
 }
 
@@ -56,6 +60,7 @@ const putContact = async (req, res, next) => {
     .then((result) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(result);
+        contactUpdated.push(result.insertedId);
     });
 }
 
