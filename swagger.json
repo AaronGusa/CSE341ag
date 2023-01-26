@@ -5,10 +5,11 @@
     "description": "W04 CSE341 Personal Assignment",
     "version": "1.0.0"
   },
-  "host": "https://ag341.onrender.com/",
+  "host": "ag341.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/test": {
