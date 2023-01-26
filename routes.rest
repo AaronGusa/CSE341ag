@@ -4,22 +4,22 @@ GET http://localhost:8080/contacts
 # Contact JSON with contact information from MongoDB #
 ###
 #------------------------ GET :ids ---------------------------#
-GET http://localhost:8080/contacts/63bc9ba020a116e9df68b1ea
+GET http://localhost:8080/contacts/63d2df9b6b443d1eebc7fdb0
 
 ###
-GET http://localhost:8080/contacts/63bc9bde20a116e9df68b1eb
+GET http://localhost:8080/contacts/63d2e0cb6b443d1eebc7fdb1
 
 ###
-GET http://localhost:8080/contacts/63bc9c5620a116e9df68b1ec
+GET http://localhost:8080/contacts/63d2e1216b443d1eebc7fdb2
 
 ###
-GET http://localhost:8080/contacts/63bc9c9920a116e9df68b1ed
+GET http://localhost:8080/contacts/63d2e1456b443d1eebc7fdb3
 
 ###
-GET http://localhost:8080/contacts/63bc9cd720a116e9df68b1ee
+GET http://localhost:8080/contacts/63d2e1666b443d1eebc7fdb4
 
 ###
-GET http://localhost:8080/contacts/63bc9d1720a116e9df68b1ef
+GET http://localhost:8080/contacts/63d2e1916b443d1eebc7fdb5
 
 ###
 #------------------------ POST ---------------------------#
@@ -51,3 +51,44 @@ content-type: application/json
 ###
 #------------------------ DELETE :ids --------------------------#
 DELETE http://localhost:8080/contacts/63d04d3b99b8fbcaf1957159 HTTP/1.1 
+
+###
+
+#--------------------------- 4 RENDER ---------------------------#
+#__________________________ GET CONTACTS ________________________#
+GET https://ag341.onrender.com/contacts
+
+###
+#_______________________ GET SINGLE CONTACT _____________________#
+
+GET https://ag341.onrender.com/contacts/63d2df9b6b443d1eebc7fdb0
+
+###
+#______________________________ POST ____________________________#
+POST http://ag341.onrender.com/contacts HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Test",
+    "lastName":"POST",
+    "email":"post@post.post",
+    "favoriteColor":"post purple",
+    "birthday":"post 2000"
+}
+
+###
+#_____________________________ PUT :ids __________________________#
+PUT http://ag341.onrender.com/contacts/63d2e5dd6b443d1eebc7fdb7 HTTP/1.1 
+content-type: application/json
+
+{
+    "firstName":"Test",
+    "lastName":"Update",
+    "email":"update@update.update",
+    "favoriteColor":"update brown",
+    "birthday":"05/05/2005"
+}
+
+###
+#_________________________ DELETE :ids ___________________________#
+DELETE http://localhost:8080/contacts/63d2e5dd6b443d1eebc7fdb7 HTTP/1.1 
