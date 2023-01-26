@@ -8,7 +8,6 @@
   "host": "ag341.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {

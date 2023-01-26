@@ -6,7 +6,7 @@ const doc = {
         description: "W04 CSE341 Personal Assignment",
     },
     host: 'ag341.onrender.com',
-    schemes: ['http', 'https'],
+    schemes: ['https'],
 };
 //FOR LOCAL DEV
 // const doc = {
