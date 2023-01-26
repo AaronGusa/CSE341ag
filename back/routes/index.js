@@ -17,7 +17,7 @@ routes.use('/',
   (docData = (req, res) => {
     
   let docData = {
-    APIs: 'https://ag341.onrender.com/api/',
+    APIs: 'https://ag341.onrender.com/api-docs/',
     Contact_JSON: 'https://ag341.onrender.com/contacts'
   };
   res.send(docData);

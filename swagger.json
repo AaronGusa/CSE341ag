@@ -24,7 +24,7 @@
     },
     "/api": {
       "get": {
-        "description": "API Documentation for Aaron's CSE341 Contacts",
+        "description": "",
         "parameters": [],
         "responses": {}
       }
