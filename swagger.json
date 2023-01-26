@@ -51,10 +51,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fname": {
+                "firstName": {
                   "example": "any"
                 },
-                "lname": {
+                "lastName": {
                   "example": "any"
                 },
                 "email": {
@@ -115,10 +115,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fname": {
+                "firstName": {
                   "example": "any"
                 },
-                "lname": {
+                "lastName": {
                   "example": "any"
                 },
                 "email": {
