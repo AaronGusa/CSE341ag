@@ -5,8 +5,8 @@ const doc = {
         title: "Aaron Gusa's Personal Assignment",
         description: "W04 CSE341 Personal Assignment",
     },
-    host: 'https://ag341.onrender.com',
-    schemes: ['http'],
+    host: 'ag341.onrender.com',
+    schemes: ['http', 'https'],
 };
 //FOR LOCAL DEV
 // const doc = {
