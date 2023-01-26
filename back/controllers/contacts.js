@@ -25,8 +25,8 @@ const getOne = async (req, res, next) => {
 const postContact = async (req, res, next) => {
     
     const contactNew = {
-        fname: req.body.firstName,
-        lname: req.body.lastName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
@@ -45,8 +45,8 @@ const postContact = async (req, res, next) => {
 const putContact = async (req, res, next) => {
     const id = new ObjectId(req.params.id);
     const contactUpdated = {
-        fname: req.body.firstName,
-        lname: req.body.lastName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday
