@@ -39,8 +39,6 @@ const postContact = async (req, res, next) => {
     // })
     if (result.acknowledged) {
         res.status(201).json(result);  
-        contactNew.push(result);
-        contacts.push(contactNew);
     };
 }
 
