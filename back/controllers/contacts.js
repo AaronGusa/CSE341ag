@@ -39,10 +39,11 @@ const postContact = async (req, res, next) => {
     // })
     if (result.acknowledged) {
         res.status(201).json(result);
-        await mongodb.getDb().db('341_contacts').collection('contacts').find();
-    result.toArray().then((contacts) => {
+        const result = await mongodb.getDb().db('341_contacts').collection('contacts').find();
+        result.toArray().then((contacts) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(contacts); 
+        
     });
     }
 }
